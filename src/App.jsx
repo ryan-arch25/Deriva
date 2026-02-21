@@ -89,7 +89,7 @@ const destinations = {
     hook: "The most hospitable country in the Middle East. The Gulf capital that chose not to become Dubai. The desert camps that have been here for 3,000 years.",
     why: "Oman is what the Gulf used to be before the money arrived — traditional, genuine, and extraordinarily beautiful. The Wahiba Sands, the fjords of the Musandam, the mountain plateau of Jebel Akhdar, and the ancient souqs of Muscat are all completely different and all completely extraordinary.",
     img: "https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=1200&q=80",
-    match: (a) => { let s=0; if(a[0]?.includes("culture")||a[0]?.includes("adventure")||a[0]?.includes("escape")) s+=3; if(a[3]?.includes("explorer")) s+=3; if(a[4]?.includes("bold")||a[4]?.includes("wild")) s+=3; if(a[5]?.includes("desert")||a[5]?.includes("mountains")||a[5]?.includes("coast")) s+=3; if(a[9]?.includes("tourist")||a[9]?.includes("generic")||a[9]?.includes("crowds")) s+=3; return s; },
+    match: (a) => { let s=0; if(a[0]?.includes("culture")||a[0]?.includes("adventure")||a[0]?.includes("escape")) s+=3; if(a[3]?.includes("explorer")) s+=3; if(a[4]?.includes("bold")||a[4]?.includes("wild")) s+=3; if(a[5]?.includes("desert")||a[5]?.includes("mountains")||a[5]?.includes("coast")) s+=3; if(a[9]?.includes("tourist")||a[9]?.includes("generic")||a[9]?.includes("crowds")) s+=3; if(a[1]?.includes("family")) s-=5; return s; },
   },
   australia: {
     name: "Australia", region: "South Pacific", tag: "Wilderness · Reef · Red Centre",
@@ -1394,7 +1394,7 @@ const chileRegions = [
     name: "Carretera Austral", country: "chile", tag: "Road Trip · Wilderness · Patagonia Edge",
     hook: "1,200km of road through wilderness that has no equivalent on earth. Paved for about a third of it.",
     img: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80",
-    match: (a) => { let s=0; if(a[0]?.includes("adventure")||a[0]?.includes("escape")) s+=4; if(a[3]?.includes("explorer")) s+=4; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=4; if(a[5]?.includes("mountains")||a[5]?.includes("countryside")||a[5]?.includes("desert")) s+=3; if(a[6]?.includes("explore")) s+=4; if(a[7]?.includes("midrange")||a[7]?.includes("budget")) s+=1; if(a[8]?.includes("freedom")||a[8]?.includes("surprise")) s+=3; if(a[9]?.includes("explore")||a[9]?.includes("walk")) s+=3; if(a[8]?.includes("none")||a[8]?.includes("feel")) s+=3; if(a[9]?.includes("tourist")||a[9]?.includes("generic")||a[9]?.includes("rushed")) s+=2; if(a[6]?.includes("physical")||a[6]?.includes("spontaneous")) s+=2; return s; },
+    match: (a) => { let s=0; if(a[0]?.includes("adventure")||a[0]?.includes("escape")) s+=4; if(a[3]?.includes("explorer")) s+=4; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=4; if(a[5]?.includes("mountains")||a[5]?.includes("countryside")||a[5]?.includes("desert")) s+=3; if(a[6]?.includes("explore")) s+=4; if(a[7]?.includes("midrange")||a[7]?.includes("budget")) s+=1; if(a[8]?.includes("freedom")||a[8]?.includes("surprise")) s+=3; if(a[9]?.includes("explore")||a[9]?.includes("walk")) s+=3; if(a[8]?.includes("none")||a[8]?.includes("feel")) s+=3; if(a[9]?.includes("tourist")||a[9]?.includes("generic")||a[9]?.includes("rushed")) s+=2; if(a[6]?.includes("physical")||a[6]?.includes("spontaneous")) s+=2; if(a[1]?.includes("family")) s+=-4; return s; },
     intro: "The Carretera Austral — Route 7 — is a 1,240km road that runs through the Patagonian wilderness from Puerto Montt in the north to Villa O'Higgins in the south. Augusto Pinochet built it to connect remote communities that had no other land access. It passes through old-growth temperate rainforest, hanging glaciers, turquoise rivers, marble caves, and fjords that see almost no traffic. Roughly a third of it is paved. You need a 4WD, three weeks, and either to be very comfortable with dust and mud or to genuinely not care about either.",
     highlights: [
       { label: "Queulat National Park", text: "The Ventisquero Colgante (Hanging Glacier) — a glacier suspended between two rock faces, calving icebergs into a turquoise lagoon below. The hike to the viewpoint is 4km round trip through southern beech forest. One of the most dramatic landscapes on the Carretera." },
@@ -1460,7 +1460,7 @@ const chileRegions = [
     name: "Chilean Fjords", country: "chile", tag: "Remote · Glaciers · Almost No One Goes",
     hook: "One of the most remote and extraordinary landscapes on earth. Almost nobody goes. That's the point.",
     img: "https://images.unsplash.com/photo-1614728423169-3f65fd722b7e?w=800&q=80",
-    match: (a) => { let s=0; if(a[0]?.includes("escape")||a[0]?.includes("adventure")) s+=4; if(a[3]?.includes("explorer")) s+=4; if(a[4]?.includes("wild")) s+=5; if(a[5]?.includes("mountains")||a[5]?.includes("coast")||a[5]?.includes("desert")) s+=2; if(a[6]?.includes("explore")||a[6]?.includes("nothing")) s+=3; if(a[7]?.includes("flexible")||a[7]?.includes("open")) s+=2; if(a[8]?.includes("quiet")||a[8]?.includes("freedom")) s+=4; if(a[9]?.includes("sit")||a[9]?.includes("explore")) s+=2; if(a[8]?.includes("none")||a[8]?.includes("people")) s+=2; if(a[9]?.includes("tourist")||a[9]?.includes("crowds")||a[9]?.includes("generic")) s+=3; if(a[6]?.includes("physical")||a[6]?.includes("nothing")) s+=1; return s; },
+    match: (a) => { let s=0; if(a[0]?.includes("escape")||a[0]?.includes("adventure")) s+=4; if(a[3]?.includes("explorer")) s+=4; if(a[4]?.includes("wild")) s+=5; if(a[5]?.includes("mountains")||a[5]?.includes("coast")||a[5]?.includes("desert")) s+=2; if(a[6]?.includes("explore")||a[6]?.includes("nothing")) s+=3; if(a[7]?.includes("flexible")||a[7]?.includes("open")) s+=2; if(a[8]?.includes("quiet")||a[8]?.includes("freedom")) s+=4; if(a[9]?.includes("sit")||a[9]?.includes("explore")) s+=2; if(a[8]?.includes("none")||a[8]?.includes("people")) s+=2; if(a[9]?.includes("tourist")||a[9]?.includes("crowds")||a[9]?.includes("generic")) s+=3; if(a[6]?.includes("physical")||a[6]?.includes("nothing")) s+=1; if(a[1]?.includes("family")) s+=-4; return s; },
     intro: "The Chilean fjords stretch for 1,500km from Puerto Montt in the north to Cape Horn in the south — a labyrinth of channels, glaciers, and islands that receives less than 1,000 visitors per year in its more remote sections. The Navimag ferry, which runs from Puerto Montt to Puerto Natales over four days, passes through the heart of the fjords and is one of the great slow travel experiences on earth. The Skorpios cruise lines offer more curated access to glaciers and hot springs that no road reaches. This is what the planet looks like when humans haven't touched it.",
     highlights: [
       { label: "The Navimag ferry", text: "A working cargo and passenger ferry that runs the full length of the fjords from Puerto Montt to Puerto Natales over four days. The scenery is extraordinary — hanging glaciers, sea lion colonies, dolphins in the bow wake. Not a cruise ship — a real ferry with cabins and a dining room. The experience of slow passage through complete wilderness is the point." },
@@ -1594,7 +1594,7 @@ const icelandRegions = [
     name: "Westfjords", country: "iceland", tag: "Remote · Dramatic · Almost No One Goes",
     hook: "The most dramatic fjords in Iceland. The worst roads in Iceland. The fewest tourists in Iceland. All three of those things are the point.",
     img: "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=800&q=80",
-    match: (a) => { let s=0; if(a[0]?.includes("escape")||a[0]?.includes("adventure")) s+=4; if(a[3]?.includes("explorer")) s+=5; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=5; if(a[5]?.includes("mountains")||a[5]?.includes("coast")) s+=3; if(a[6]?.includes("explore")||a[6]?.includes("physical")) s+=3; if(a[1]?.includes("solo")||a[1]?.includes("partner")) s+=2; if(a[8]?.includes("none")||a[8]?.includes("people")) s+=3; if(a[9]?.includes("tourist")||a[9]?.includes("crowds")||a[9]?.includes("generic")) s+=4; if(a[6]?.includes("spontaneous")||a[6]?.includes("fullday")) s+=2; return s; },
+    match: (a) => { let s=0; if(a[0]?.includes("escape")||a[0]?.includes("adventure")) s+=4; if(a[3]?.includes("explorer")) s+=5; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=5; if(a[5]?.includes("mountains")||a[5]?.includes("coast")) s+=3; if(a[6]?.includes("explore")||a[6]?.includes("physical")) s+=3; if(a[1]?.includes("solo")||a[1]?.includes("partner")) s+=2; if(a[8]?.includes("none")||a[8]?.includes("people")) s+=3; if(a[9]?.includes("tourist")||a[9]?.includes("crowds")||a[9]?.includes("generic")) s+=4; if(a[6]?.includes("spontaneous")||a[6]?.includes("fullday")) s+=2; if(a[1]?.includes("family")) s+=-4; return s; },
     intro: "The Westfjords are a peninsula in the northwest of Iceland connected to the rest of the country by a 7km neck of land. The roads are gravel, the fjords are deep, the waterfalls come off the cliffs directly onto the beach, and the area receives roughly 10% of Iceland's total tourism. Látrabjarg is the westernmost point in Europe and one of the largest seabird cliffs on earth — puffins nest in the grass at your feet. Dynjandi is a waterfall that fans out in seven cascades before it hits the fjord. Ísafjörður is the only real town — 3,000 people, a fish factory, a surprisingly good restaurant, and a music festival in the winter when the sun doesn't rise for two months.",
     highlights: [
       { label: "Dynjandi waterfall", text: "The waterfall that defines the Westfjords — it fans out from a narrow top into a 100-metre wide base, dropping in seven named cascades down the cliff into the fjord. The path to the top passes all seven falls. No fence, no barrier, no queue. Walk directly behind the spray. The most extraordinary waterfall in Iceland." },
@@ -1658,7 +1658,7 @@ const icelandRegions = [
     name: "Highlands / Landmannalaugar", country: "iceland", tag: "Rhyolite Mountains · Hot Springs · Laugavegur Trek",
     hook: "Mountains the colour of an oil painting. Hot springs in the middle of nowhere. A 4-day trek that people plan their entire year around. No roads in winter.",
     img: "https://images.unsplash.com/photo-1504870712357-65ea720bf122?w=800&q=80",
-    match: (a) => { let s=0; if(a[0]?.includes("adventure")||a[0]?.includes("escape")) s+=4; if(a[3]?.includes("explorer")) s+=4; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=5; if(a[5]?.includes("mountains")||a[5]?.includes("desert")) s+=4; if(a[6]?.includes("physical")||a[6]?.includes("explore")) s+=4; if(a[7]?.includes("midrange")||a[7]?.includes("budget")) s+=1; if(a[8]?.includes("deep")||a[8]?.includes("none")) s+=2; if(a[9]?.includes("tourist")||a[9]?.includes("generic")||a[9]?.includes("crowds")) s+=3; if(a[6]?.includes("fullday")) s+=2; return s; },
+    match: (a) => { let s=0; if(a[0]?.includes("adventure")||a[0]?.includes("escape")) s+=4; if(a[3]?.includes("explorer")) s+=4; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=5; if(a[5]?.includes("mountains")||a[5]?.includes("desert")) s+=4; if(a[6]?.includes("physical")||a[6]?.includes("explore")) s+=4; if(a[7]?.includes("midrange")||a[7]?.includes("budget")) s+=1; if(a[8]?.includes("deep")||a[8]?.includes("none")) s+=2; if(a[9]?.includes("tourist")||a[9]?.includes("generic")||a[9]?.includes("crowds")) s+=3; if(a[6]?.includes("fullday")) s+=2; if(a[1]?.includes("family")) s+=-4; return s; },
     intro: "Landmannalaugar sits in the Icelandic Highlands at 600 metres above sea level, accessible only by 4WD river crossing from July to September, and closed completely by snow for eight months of the year. The landscape is rhyolite — a volcanic rock that comes in greens, yellows, reds, purples, and blacks — creating mountain colours that look digitally altered and aren't. A natural hot spring runs alongside the camp where you can swim regardless of weather. The Laugavegur trek, a 4-day hut-to-hut trail to Þórsmörk, is the most celebrated multi-day hike in Iceland and one of the best in the world. Everything about this place requires effort to reach and rewards it completely.",
     highlights: [
       { label: "The rhyolite mountains", text: "The mountains surrounding Landmannalaugar are coloured by rhyolite — a volcanic rock formed at high temperatures that oxidises into extraordinary colours. Walk the Brennisteinsalda trail (3–4 hours, circular, no guide needed) for the full range: yellow sulphur vents, black obsidian fields, red iron-stained ridges, green moss. The photos look fake. They aren't." },
@@ -2150,7 +2150,7 @@ const omanRegions = [
     name: "Muscat", country: "oman", tag: "Souqs · Grand Mosque · Mutrah",
     hook: "A Gulf capital that chose not to become Dubai. The old souq still works. The hospitality is genuine.",
     img: "https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=800&q=80",
-    match: (a) => { let s=0; if(a[0]?.includes("culture")||a[0]?.includes("food")) s+=4; if(a[3]?.includes("explorer")||a[3]?.includes("local")) s+=3; if(a[5]?.includes("cities")||a[5]?.includes("coast")) s+=3; if(a[6]?.includes("wander")||a[6]?.includes("absorb")) s+=4; if(a[8]?.includes("people")||a[8]?.includes("feel")) s+=4; if(a[9]?.includes("tourist")||a[9]?.includes("generic")||a[9]?.includes("crowds")) s+=3; return s; },
+    match: (a) => { let s=0; if(a[0]?.includes("culture")||a[0]?.includes("food")) s+=4; if(a[3]?.includes("explorer")||a[3]?.includes("local")) s+=3; if(a[5]?.includes("cities")||a[5]?.includes("coast")) s+=3; if(a[6]?.includes("wander")||a[6]?.includes("absorb")) s+=4; if(a[8]?.includes("people")||a[8]?.includes("feel")) s+=4; if(a[9]?.includes("tourist")||a[9]?.includes("generic")||a[9]?.includes("crowds")) s+=3; if(a[1]?.includes("family")) s-=4; return s; },
     intro: "Muscat is the Gulf capital that chose not to become Dubai — no skyscrapers over seven stories, white paint and traditional architecture required on all new construction. The Sultan Qaboos Grand Mosque is one of the most beautiful in the world — the main prayer hall carpet was woven by 600 women over four years and is the second largest handwoven carpet on earth. The Mutrah Souq is one of the oldest working markets in the Arabian Peninsula — frankincense, silver Khanjar daggers, halwa, traders three generations deep. The Corniche at sunset, sea on one side and white buildings on the other, is the defining image of Oman.",
     highlights: [
       { label: "Sultan Qaboos Grand Mosque", text: "The main prayer hall carpet — 4,343 square metres, woven by 600 women in Iran over four years — is the second largest handwoven carpet in the world. The chandelier weighs 8 tonnes. Non-Muslims admitted Saturday through Thursday, 8am-11am. Dress modestly — abayas available to borrow at the entrance." },
@@ -2180,7 +2180,7 @@ const omanRegions = [
     name: "Wahiba Sands", country: "oman", tag: "Desert · Bedouin · Dunes at Dawn",
     hook: "The dunes are 200 metres high. The silence at night is absolute. The Bedouin camps have been here for 3,000 years.",
     img: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80",
-    match: (a) => { let s=0; if(a[0]?.includes("escape")||a[0]?.includes("adventure")||a[0]?.includes("beauty")) s+=4; if(a[3]?.includes("explorer")) s+=4; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=4; if(a[5]?.includes("desert")) s+=6; if(a[6]?.includes("nothing")||a[6]?.includes("explore")) s+=3; if(a[9]?.includes("tourist")||a[9]?.includes("crowds")||a[9]?.includes("generic")) s+=4; return s; },
+    match: (a) => { let s=0; if(a[0]?.includes("escape")||a[0]?.includes("adventure")||a[0]?.includes("beauty")) s+=4; if(a[3]?.includes("explorer")) s+=4; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=4; if(a[5]?.includes("desert")) s+=6; if(a[6]?.includes("nothing")||a[6]?.includes("explore")) s+=3; if(a[9]?.includes("tourist")||a[9]?.includes("crowds")||a[9]?.includes("generic")) s+=4; if(a[1]?.includes("family")) s-=5; if(a[1]?.includes("family")) s+=-4; return s; },
     intro: "The Wahiba Sands is a 10,000 square kilometre sea of dunes in eastern Oman — some reaching 200 metres, the sand shading from pale gold at the edges to deep orange at the centre. The Bedouin who have lived here for millennia are still here. Several families now operate desert camps for visitors — actual family compounds where you sleep in traditional barastis, eat Omani food cooked on a fire, and wake before dawn to climb the dunes for sunrise. The desert sky at night has no light pollution for 200km in any direction — the Milky Way is visible to the naked eye and it is the most extraordinary thing about the Wahiba.",
     highlights: [
       { label: "Dunes at dawn", text: "Wake at 4:30am. Walk 20 minutes to the nearest high dune. Climb the crest — the sand is firm at dawn before the heat softens it. Watch the light change from grey to gold to orange, the shadows making the ridges three-dimensional. The first camel caravan of the day appears from nowhere. This is why you came." },
@@ -2208,7 +2208,7 @@ const omanRegions = [
     name: "Wadi Shab & Wadi Nakhr", country: "oman", tag: "Gorges · Turquoise Pools · Grand Canyon of Arabia",
     hook: "Swim through a canyon to reach a waterfall hidden inside a cave. This is a real activity you can do tomorrow.",
     img: "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=800&q=80",
-    match: (a) => { let s=0; if(a[0]?.includes("adventure")||a[0]?.includes("escape")||a[0]?.includes("beauty")) s+=4; if(a[3]?.includes("explorer")) s+=4; if(a[4]?.includes("bold")||a[4]?.includes("wild")) s+=4; if(a[5]?.includes("mountains")||a[5]?.includes("coast")) s+=3; if(a[6]?.includes("physical")||a[6]?.includes("explore")) s+=5; if(a[9]?.includes("tourist")||a[9]?.includes("crowds")||a[9]?.includes("generic")) s+=3; return s; },
+    match: (a) => { let s=0; if(a[0]?.includes("adventure")||a[0]?.includes("escape")||a[0]?.includes("beauty")) s+=4; if(a[3]?.includes("explorer")) s+=4; if(a[4]?.includes("bold")||a[4]?.includes("wild")) s+=4; if(a[5]?.includes("mountains")||a[5]?.includes("coast")) s+=3; if(a[6]?.includes("physical")||a[6]?.includes("explore")) s+=5; if(a[9]?.includes("tourist")||a[9]?.includes("crowds")||a[9]?.includes("generic")) s+=3; if(a[1]?.includes("family")) s-=5; return s; },
     intro: "Oman has more wadis than any other country in the Arabian Peninsula. Wadi Shab is the most spectacular: a 2-hour walk along the canyon floor brings you to a turquoise pool, then a swim through a narrow canyon to a waterfall hidden inside a cave. The water is cold, clean, and the exact turquoise that photographs make it look. Wadi Nakhr, in the Hajar Mountains near Nizwa, is called the Grand Canyon of Arabia — a 1,000 metre deep gorge that appears without warning at the edge of the Saiq Plateau, ancient villages clinging to the opposite wall. The two wadis together form the best two-day combination in Oman.",
     highlights: [
       { label: "Wadi Shab cave swim", text: "Cross the river by small boat (OMR 0.5), walk 2 hours along the wadi floor, reach the pools. Swim across the first pool. A narrow opening in the canyon wall leads to a second pool and then a cave with a waterfall inside — the interior lit by the gap above. One of the most unusual swim experiences in the world." },
@@ -2234,7 +2234,7 @@ const omanRegions = [
     name: "Musandam Peninsula", country: "oman", tag: "Fjords · Dhow · Telegraph Island",
     hook: "The Norway of Arabia. Technically an exclave. You need a new stamp in your passport to get there from Oman.",
     img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
-    match: (a) => { let s=0; if(a[0]?.includes("adventure")||a[0]?.includes("escape")||a[0]?.includes("beauty")) s+=4; if(a[3]?.includes("explorer")) s+=5; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=4; if(a[5]?.includes("mountains")||a[5]?.includes("coast")) s+=4; if(a[6]?.includes("nothing")||a[6]?.includes("explore")) s+=3; if(a[9]?.includes("tourist")||a[9]?.includes("crowds")||a[9]?.includes("generic")) s+=5; if(a[8]?.includes("article")||a[8]?.includes("none")) s+=4; return s; },
+    match: (a) => { let s=0; if(a[0]?.includes("adventure")||a[0]?.includes("escape")||a[0]?.includes("beauty")) s+=4; if(a[3]?.includes("explorer")) s+=5; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=4; if(a[5]?.includes("mountains")||a[5]?.includes("coast")) s+=4; if(a[6]?.includes("nothing")||a[6]?.includes("explore")) s+=3; if(a[9]?.includes("tourist")||a[9]?.includes("crowds")||a[9]?.includes("generic")) s+=5; if(a[8]?.includes("article")||a[8]?.includes("none")) s+=4; if(a[1]?.includes("family")) s+=-4; return s; },
     intro: "The Musandam Peninsula is a shard of Oman separated from the rest of the country by the UAE — a geographical exclave at the tip of the Arabian Peninsula where the Strait of Hormuz narrows to 33km. The landscape is the Norway of Arabia — the Hajar Mountains drop directly into the Khor ash Sham fjord, the water is so clear you can see 15 metres down, and the villages on the water's edge have no road connection. Telegraph Island, in the middle of the khor, was the British cable station for the Indo-European telegraph line in the 1860s — isolated postings here are said to have given English the phrase going round the bend. The Musandam is the least visited part of Oman and, arguably, the most extraordinary.",
     highlights: [
       { label: "Khor ash Sham dhow trip", text: "The full-day dhow tour of the main fjord — Khasab past the villages of Qanah and Kumzar, around Telegraph Island, snorkeling over reef, lunch on the boat. The mountain walls drop vertically into water with 70% visibility. Dolphins follow the boat through the Strait. The most dramatic boat journey in Arabia." },
@@ -2261,7 +2261,7 @@ const omanRegions = [
     name: "Jebel Akhdar", country: "oman", tag: "Green Mountain · Rose Water · Ancient Villages",
     hook: "A mountain plateau at 2,000 metres in the middle of the Arabian desert, covered in terraced orchards producing roses, pomegranates, and apricots.",
     img: "https://images.unsplash.com/photo-1469521669194-babb45599def?w=800&q=80",
-    match: (a) => { let s=0; if(a[0]?.includes("escape")||a[0]?.includes("culture")||a[0]?.includes("beauty")) s+=4; if(a[3]?.includes("explorer")||a[3]?.includes("local")) s+=4; if(a[4]?.includes("bold")||a[4]?.includes("stretch")) s+=3; if(a[5]?.includes("mountains")||a[5]?.includes("countryside")) s+=5; if(a[6]?.includes("wander")||a[6]?.includes("absorb")||a[6]?.includes("nothing")) s+=4; if(a[9]?.includes("tourist")||a[9]?.includes("generic")||a[9]?.includes("crowds")) s+=4; return s; },
+    match: (a) => { let s=0; if(a[0]?.includes("escape")||a[0]?.includes("culture")||a[0]?.includes("beauty")) s+=4; if(a[3]?.includes("explorer")||a[3]?.includes("local")) s+=4; if(a[4]?.includes("bold")||a[4]?.includes("stretch")) s+=3; if(a[5]?.includes("mountains")||a[5]?.includes("countryside")) s+=5; if(a[6]?.includes("wander")||a[6]?.includes("absorb")||a[6]?.includes("nothing")) s+=4; if(a[9]?.includes("tourist")||a[9]?.includes("generic")||a[9]?.includes("crowds")) s+=4; if(a[1]?.includes("family")) s-=5; return s; },
     intro: "Jebel Akhdar — the Green Mountain — is a plateau in the Hajar Mountains at 2,000 metres elevation where the altitude creates a microclimate completely unlike anything in Arabia. The plateau is covered in ancient terraced orchards: Damask roses harvested in April for rose water and rose oil, pomegranates, apricots, peaches. The ancient falaj irrigation system — channels cut into the mountain to carry water from springs — has operated for 3,000 years and is a UNESCO World Heritage site. The villages on the plateau edge cling to the rim of canyons with views that drop 1,000 metres. Almost no tourists, almost no infrastructure, and one of the most surprising places in the Arabian Peninsula.",
     highlights: [
       { label: "Wadi Bani Habib", text: "An abandoned village on the plateau edge — stone houses built into the cliff, rooftops now collapsed, the falaj still running past empty rooms. The villagers moved to Nizwa in the 1970s when the Sultan built the road. The terrace orchards are still tended by descendants who return each season." },
@@ -2410,7 +2410,7 @@ const australiaRegions = [
     name: "The Kimberley", country: "australia", tag: "Ancient Rock Art · Horizontal Falls · Last Wild Place",
     hook: "The most remote landscape in Australia. Rock art that predates any cave painting in Europe. Horizontal waterfalls through rock gaps so narrow boats surf through them.",
     img: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=800&q=80",
-    match: (a) => { let s=0; if(a[0]?.includes("adventure")||a[0]?.includes("escape")||a[0]?.includes("beauty")) s+=4; if(a[3]?.includes("explorer")) s+=5; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=5; if(a[5]?.includes("mountains")||a[5]?.includes("coast")||a[5]?.includes("desert")) s+=4; if(a[6]?.includes("explore")||a[6]?.includes("physical")) s+=4; if(a[9]?.includes("tourist")||a[9]?.includes("crowds")||a[9]?.includes("generic")) s+=5; if(a[8]?.includes("none")||a[8]?.includes("article")) s+=4; return s; },
+    match: (a) => { let s=0; if(a[0]?.includes("adventure")||a[0]?.includes("escape")||a[0]?.includes("beauty")) s+=4; if(a[3]?.includes("explorer")) s+=5; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=5; if(a[5]?.includes("mountains")||a[5]?.includes("coast")||a[5]?.includes("desert")) s+=4; if(a[6]?.includes("explore")||a[6]?.includes("physical")) s+=4; if(a[9]?.includes("tourist")||a[9]?.includes("crowds")||a[9]?.includes("generic")) s+=5; if(a[8]?.includes("none")||a[8]?.includes("article")) s+=4; if(a[1]?.includes("family")) s+=-5; return s; },
     intro: "The Kimberley is a 424,000 square kilometre wilderness in the far northwest of Australia — ancient sandstone ranges, vast rivers, waterfalls, and gorges inaccessible by road for six months of the year. The Bungle Bungle Range (Purnululu) — beehive-striped sandstone domes unknown to the outside world until 1983 — is one of the most extraordinary geological formations on earth. The Horizontal Falls — tidal water forced through two narrow rock gaps, creating standing waves — are so improbable that David Attenborough called them one of the great natural wonders of the world. The Gwion Gwion rock paintings found across the Kimberley cliff faces are estimated at 17,000-50,000 years old — predating the European cave paintings of Lascaux.",
     highlights: [
       { label: "Bungle Bungle Range (Purnululu)", text: "Beehive-shaped domes of banded sandstone — black bands are cyanobacteria, orange is oxidised iron. Inaccessible during wet season (November-April). Cathedral Gorge walk (3km return) enters a natural amphitheatre with perfect acoustics. Echidna Chasm is a slot canyon so narrow you turn sideways. Fly over in a helicopter first — the scale from the air is only comprehensible from above." },
@@ -2560,7 +2560,7 @@ const georgiaRegions = [
     name: "Svaneti", country: "georgia", tag: "Medieval Towers · Glaciers · Mestia",
     hook: "A highland region that was so isolated it developed its own language, its own alphabet, and its own medieval defensive tower tradition. The glaciers are retreating. Go now.",
     img: "https://images.unsplash.com/photo-1567942712661-82b9b407abbf?w=800&q=80",
-    match: (a) => { let s=0; if(a[0]?.includes("adventure")||a[0]?.includes("escape")||a[0]?.includes("beauty")) s+=4; if(a[3]?.includes("explorer")) s+=5; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=5; if(a[5]?.includes("mountains")) s+=6; if(a[6]?.includes("physical")||a[6]?.includes("explore")||a[6]?.includes("nothing")) s+=5; if(a[9]?.includes("tourist")||a[9]?.includes("generic")||a[9]?.includes("crowds")) s+=5; if(a[8]?.includes("none")||a[8]?.includes("article")) s+=5; return s; },
+    match: (a) => { let s=0; if(a[0]?.includes("adventure")||a[0]?.includes("escape")||a[0]?.includes("beauty")) s+=4; if(a[3]?.includes("explorer")) s+=5; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=5; if(a[5]?.includes("mountains")) s+=6; if(a[6]?.includes("physical")||a[6]?.includes("explore")||a[6]?.includes("nothing")) s+=5; if(a[9]?.includes("tourist")||a[9]?.includes("generic")||a[9]?.includes("crowds")) s+=5; if(a[8]?.includes("none")||a[8]?.includes("article")) s+=5; if(a[1]?.includes("family")) s+=-5; return s; },
     intro: "Svaneti is a highland region in the Greater Caucasus at 1,500-2,200 metres elevation, accessible by a spectacular road through the Enguri Gorge or by a 45-minute flight from Tbilisi. The Svans — the people of Svaneti — developed in near-total isolation for centuries and have their own language (Svan, spoken by around 30,000 people), their own distinct culture, and a tradition of building defensive towers (koshkebi) beside their houses that produced some of the most extraordinary medieval architecture in the world. The village of Ushguli, at 2,200 metres, is the highest continuously inhabited settlement in Europe — four villages with 200 stone towers visible simultaneously, the 5,201 metre Mount Shkhara glacier in the background.",
     highlights: [
       { label: "Ushguli", text: "The highest continuously inhabited settlement in Europe — four villages at 2,200 metres with 200 medieval stone towers visible simultaneously. A UNESCO World Heritage site. The road from Mestia (45km) is unpaved and requires a 4WD — 2.5 hours each way, impassable in winter. The village has 70 permanent residents and is completely extraordinary." },
@@ -2799,7 +2799,7 @@ const vietnamRegions = [
     name: "Ha Long Bay & the North", country: "vietnam", tag: "Limestone Karsts · Junk Boats · Ha Giang",
     hook: "2,000 limestone islands rising from emerald water. The overnight junk boat is one of the great travel experiences in Asia. The Ha Giang Loop in the far north is the motorcycle road that changes people.",
     img: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80",
-    match: (a) => { let s=0; if(a[0]?.includes("adventure")||a[0]?.includes("escape")||a[0]?.includes("beauty")) s+=4; if(a[3]?.includes("explorer")) s+=5; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=5; if(a[5]?.includes("coast")||a[5]?.includes("mountains")) s+=5; if(a[6]?.includes("physical")||a[6]?.includes("explore")||a[6]?.includes("nothing")) s+=4; if(a[9]?.includes("tourist")||a[9]?.includes("generic")||a[9]?.includes("crowds")) s+=4; return s; },
+    match: (a) => { let s=0; if(a[0]?.includes("adventure")||a[0]?.includes("escape")||a[0]?.includes("beauty")) s+=4; if(a[3]?.includes("explorer")) s+=5; if(a[4]?.includes("wild")||a[4]?.includes("bold")) s+=5; if(a[5]?.includes("coast")||a[5]?.includes("mountains")) s+=5; if(a[6]?.includes("physical")||a[6]?.includes("explore")||a[6]?.includes("nothing")) s+=4; if(a[9]?.includes("tourist")||a[9]?.includes("generic")||a[9]?.includes("crowds")) s+=4; if(a[1]?.includes("family")) s+=-3; return s; },
     intro: "Ha Long Bay is a UNESCO World Heritage Site in the Gulf of Tonkin — 2,000 limestone karst islands rising from emerald water in configurations that look like something out of a Chinese scroll painting. The bay is most experienced from an overnight junk boat cruise that anchors among the islands, kayaks into sea caves, and wakes up in silence surrounded by the karsts. Bai Tu Long Bay (adjacent to Ha Long but a third of the visitors) and Lan Ha Bay (near Cat Ba Island) offer the same landscape with more solitude. The Ha Giang province in the far north — a 10-hour drive from Hanoi — is where the motorcycle loop through the Dong Van Karst Plateau (a UNESCO Global Geopark) has become one of the defining adventure travel experiences in Southeast Asia.",
     highlights: [
       { label: "Ha Long Bay overnight cruise", text: "The 2-night junk boat cruise is the right call — one night is not enough to reach the quieter sections of the bay away from the day-trip boats. The sunrise from the boat deck at 5:30am, the kayaking into dark sea caves where the ceiling drips and bats move overhead, the squid fishing off the stern at midnight. Choose a boat carefully — the quality range is extreme. Indochina Junk and Paradise Cruises are the benchmark operators." },
@@ -3110,7 +3110,6 @@ function DirectPlanInput({ onStart, onBack, c }) {
             disabled={!val.trim()}
             style={{ background: val.trim() ? c.gold : "rgba(200,184,154,0.2)", border: "none", color: val.trim() ? c.ink : c.mid, fontFamily: "system-ui, sans-serif", fontSize: "0.72rem", letterSpacing: "0.2em", textTransform: "uppercase", padding: "1rem 2.5rem", cursor: val.trim() ? "pointer" : "not-allowed" }}
           >
-            Build my itinerary
           </button>
         </div>
       </div>
@@ -3129,14 +3128,9 @@ export default function Deriva() {
   const [destStartRegion, setDestStartRegion] = useState(0);
   const [aiNote, setAiNote] = useState(null);
   const [aiLoading, setAiLoading] = useState(false);
-  const [planMessages, setPlanMessages] = useState([]);
-  const [planInput, setPlanInput] = useState("");
-  const [planLoading, setPlanLoading] = useState(false);
-  const [itinerary, setItinerary] = useState(null);
-  const [directMode, setDirectMode] = useState(false);
-  const [tripIdea, setTripIdea] = useState("");
 
-  function startQuiz() { setView("quiz"); setStep(0); setAnswers({}); setNotes({}); setResult(null); setAiNote(null); setAiLoading(false); setPlanMessages([]); setItinerary(null); setPlanInput(""); setDirectMode(false); setTripIdea(""); }
+
+  function startQuiz() { setView("quiz"); setStep(0); setAnswers({}); setNotes({}); setResult(null); setAiNote(null); setAiLoading(false);  }
 
   function startDirectPlan(idea) {
     setTripIdea(idea);
@@ -3168,113 +3162,7 @@ export default function Deriva() {
     }).join("\n");
   }
 
-  async function startPlanner() {
-    setView("plan");
-    setPlanMessages([]);
-    setItinerary(null);
-    setPlanInput("");
-    const regionContext = buildRegionContext(result);
-    const quizContext = buildQuizContext();
-    const openingMsg = {
-      role: "assistant",
-      content: `You've been matched to **${result.name}**.\n\nI already know what kind of traveler you are. Three quick things and I'll build your full itinerary:\n\n**When are you thinking of going?**\n\n**How many nights?**\n\n**Where are you flying from?** (city or region is fine — e.g. "NYC area", "Chicago", "London")`
-    };
-    setPlanMessages([openingMsg]);
-    // Store context for later use in the system prompt
-    window._derivaContext = { regionContext, quizContext, regionName: result.name };
-  }
 
-  async function sendPlanMessage() {
-    if (!planInput.trim() || planLoading) return;
-    const userMsg = { role: "user", content: planInput };
-    const newMessages = [...planMessages, userMsg];
-    setPlanMessages(newMessages);
-    setPlanInput("");
-    setPlanLoading(true);
-
-    const { regionContext, quizContext, regionName } = window._derivaContext || {};
-
-    const systemPrompt = directMode
-      ? "You are Deriva trip planning assistant. The traveler wants: " + tripIdea + ". Ask who is going, the vibe, and where flying from if not provided. Then build a specific day-by-day itinerary. Use real hotel and restaurant names. Write in Deriva voice: direct, specific, slightly literary. Output itinerary as JSON wrapped in <ITINERARY> tags with structure: {days:[{day,title,morning,afternoon,evening,stay}],notes:[],bestFor:string}. When user requests changes output full updated itinerary in <ITINERARY> tags again."
-      : `You are Deriva's trip planning assistant — opinionated, specific, and knowledgeable. You've matched this traveler to ${regionName}.
-
-TRAVELER PROFILE (from their quiz):
-${quizContext}
-
-DESTINATION KNOWLEDGE BASE:
-${regionContext}
-
-YOUR ROLE:
-- You need three things before building: (1) when they're going, (2) how many nights, (3) where they're flying from
-- Once you have all three, build the itinerary FIRST — get them excited about the destination
-- Weave routing naturally INTO the itinerary. Day 1 might read "Fly into Reykjavík, pick up a car, drive the South Coast — Skógafoss and Reynisfjara break up the journey east beautifully. Sleep in Vík." That's how you make a long drive feel like part of the adventure, not a warning
-- Never lead with logistics warnings. If an airport is small or a drive is long, frame it as part of the experience or show how the itinerary handles it gracefully
-- Use ONLY specific places from the knowledge base above — real restaurant names, real hotel names, real highlights
-- Write in Deriva's voice: direct, slightly literary, confident, never generic
-- Output the itinerary in this exact JSON format wrapped in <ITINERARY> tags:
-
-<ITINERARY>
-{
-  "days": [
-    {
-      "day": 1,
-      "title": "Short evocative title",
-      "morning": "What to do and where",
-      "afternoon": "What to do and where",
-      "evening": "Where to eat and what to order",
-      "stay": "Hotel name and one line why"
-    }
-  ],
-  "notes": ["Practical tips woven as insider knowledge, not warnings"],
-  "bestFor": "One line on who this itinerary is perfect for"
-}
-</ITINERARY>
-
-After the itinerary, add 1-2 sentences inviting them to adjust anything — different pace, swap a hotel, add a day somewhere.
-When the user asks to change something, output the FULL updated itinerary in <ITINERARY> tags again plus a brief note on what changed.
-If you don't have all three pieces yet, ask — but keep it light and conversational, never clinical.`;
-
-    try {
-      const apiMessages = newMessages.map(m => ({
-        role: m.role === "assistant" ? "assistant" : "user",
-        content: m.content.replace(/<ITINERARY>[\s\S]*?<\/ITINERARY>/g, "[itinerary updated]")
-      }));
-
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
-          max_tokens: 4000,
-          system: systemPrompt,
-          messages: apiMessages
-        })
-      });
-
-      const data = await response.json();
-      const fullText = data.content?.[0]?.text || "";
-
-      // Extract itinerary JSON if present
-      const itineraryMatch = fullText.match(/<ITINERARY>([\s\S]*?)<\/ITINERARY>/);
-      if (itineraryMatch) {
-        try {
-          const parsed = JSON.parse(itineraryMatch[1].trim());
-          setItinerary(parsed);
-        } catch(e) { console.error("Itinerary parse error", e); }
-      }
-
-      // Strip itinerary tags from chat display
-      const chatText = fullText.replace(/<ITINERARY>[\s\S]*?<\/ITINERARY>/g, "").trim();
-      const assistantMsg = { role: "assistant", content: chatText || "Itinerary updated — take a look on the right." };
-      setPlanMessages(prev => [...prev, assistantMsg]);
-
-    } catch(e) {
-      console.error(e);
-      setPlanMessages(prev => [...prev, { role: "assistant", content: "Something went wrong. Try again." }]);
-    } finally {
-      setPlanLoading(false);
-    }
-  }
 
   function toggleOption(val) {
     const cur = answers[step] || [];
@@ -3394,14 +3282,7 @@ If you don't have all three pieces yet, ask — but keep it light and conversati
               <button onClick={startQuiz} style={{ background: c.gold, border: "none", color: c.ink, fontFamily: "system-ui, sans-serif", fontSize: "0.72rem", letterSpacing: "0.2em", textTransform: "uppercase", padding: "1.1rem 3rem", cursor: "pointer" }}>
                 Find your destination
               </button>
-              <div style={{ display: "flex", alignItems: "center", gap: "1rem", width: "100%", maxWidth: 300 }}>
-                <div style={{ flex: 1, height: 1, background: "rgba(200,184,154,0.2)" }} />
-                <span style={{ fontSize: "0.6rem", letterSpacing: "0.2em", textTransform: "uppercase", color: c.mid, fontFamily: "system-ui, sans-serif" }}>or</span>
-                <div style={{ flex: 1, height: 1, background: "rgba(200,184,154,0.2)" }} />
-              </div>
-              <button onClick={() => setView("directplan")} style={{ background: "none", border: "1px solid " + c.tan, color: c.cream, fontFamily: "system-ui, sans-serif", fontSize: "0.72rem", letterSpacing: "0.2em", textTransform: "uppercase", padding: "1.1rem 3rem", cursor: "pointer" }}>
-                I know where I want to go
-              </button>
+
             </div>
           </div>
 
@@ -3439,13 +3320,6 @@ If you don't have all three pieces yet, ask — but keep it light and conversati
         </div>
       )}
 
-      {view === "directplan" && (
-        <DirectPlanInput
-          onStart={startDirectPlan}
-          onBack={() => setView("home")}
-          c={c}
-        />
-      )}
 
       {/* QUIZ */}
       {view === "quiz" && (
@@ -3557,9 +3431,7 @@ If you don't have all three pieces yet, ask — but keep it light and conversati
                 </div>
               )}
               <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-                <button onClick={startPlanner} style={{ background: c.gold, border: "none", color: c.ink, fontFamily: "system-ui, sans-serif", fontSize: "0.72rem", letterSpacing: "0.2em", textTransform: "uppercase", padding: "1rem 2.5rem", cursor: "pointer" }}>
-                  Plan this trip →
-                </button>
+
                 <button onClick={openResultDest} style={{ background: "none", border: `1px solid ${c.tan}`, color: c.cream, fontFamily: "system-ui, sans-serif", fontSize: "0.72rem", letterSpacing: "0.2em", textTransform: "uppercase", padding: "1rem 2.5rem", cursor: "pointer" }}>
                   Explore {result.name}
                 </button>
@@ -3589,94 +3461,6 @@ If you don't have all three pieces yet, ask — but keep it light and conversati
         </div>
       )}
 
-      {/* PLAN VIEW */}
-      {view === "plan" && result && (
-        <div style={{ display: "flex", height: "calc(100vh - 60px)", overflow: "hidden" }}>
-
-          {/* LEFT — Chat */}
-          <div style={{ width: "38%", minWidth: 320, borderRight: `1px solid ${c.sand}`, display: "flex", flexDirection: "column", background: c.white }}>
-            <div style={{ padding: "1.25rem 1.5rem", borderBottom: `1px solid ${c.sand}`, background: c.bark, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <div>
-                <div style={{ fontSize: "0.58rem", letterSpacing: "0.25em", textTransform: "uppercase", color: c.gold, fontFamily: "system-ui, sans-serif", marginBottom: "0.2rem" }}>Planning</div>
-                <div style={{ fontSize: "0.95rem", color: c.cream }}>{directMode ? "Your trip" : result.name}</div>
-              </div>
-              <button onClick={() => setView(directMode ? "directplan" : "result")} style={{ background: "none", border: "none", color: c.tan, fontFamily: "system-ui, sans-serif", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", cursor: "pointer" }}>← Back</button>
-            </div>
-            <div style={{ flex: 1, overflowY: "auto", padding: "1.5rem", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-              {planMessages.map((msg, i) => (
-                <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: msg.role === "user" ? "flex-end" : "flex-start" }}>
-                  {msg.role === "assistant" && (
-                    <div style={{ fontSize: "0.55rem", letterSpacing: "0.15em", textTransform: "uppercase", color: c.gold, fontFamily: "system-ui, sans-serif", marginBottom: "0.4rem" }}>Deriva</div>
-                  )}
-                  <div style={{ maxWidth: "88%", background: msg.role === "user" ? c.bark : c.cream, padding: "0.9rem 1.1rem", fontSize: "0.85rem", fontFamily: "system-ui, sans-serif", fontWeight: 300, color: msg.role === "user" ? c.cream : c.charcoal, lineHeight: 1.7, whiteSpace: "pre-wrap" }}>
-                    {msg.content}
-                  </div>
-                </div>
-              ))}
-              {planLoading && (
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-                  <div style={{ fontSize: "0.55rem", letterSpacing: "0.15em", textTransform: "uppercase", color: c.gold, fontFamily: "system-ui, sans-serif", marginBottom: "0.4rem" }}>Deriva</div>
-                  <div style={{ background: c.cream, padding: "0.9rem 1.1rem", fontSize: "0.85rem", fontFamily: "system-ui, sans-serif", color: c.mid, fontStyle: "italic" }}>Building your itinerary…</div>
-                </div>
-              )}
-            </div>
-            <div style={{ padding: "1rem 1.5rem", borderTop: `1px solid ${c.sand}`, display: "flex", gap: "0.75rem", alignItems: "flex-end" }}>
-              <textarea
-                value={planInput}
-                onChange={e => setPlanInput(e.target.value)}
-                onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendPlanMessage(); } }}
-                placeholder="Type your answer or request..."
-                style={{ flex: 1, minHeight: 44, maxHeight: 120, background: c.cream, border: `1px solid ${c.sand}`, padding: "0.6rem 0.8rem", fontFamily: "system-ui, sans-serif", fontSize: "0.85rem", color: c.charcoal, fontWeight: 300, resize: "none", outline: "none", lineHeight: 1.5 }}
-              />
-              <button onClick={sendPlanMessage} disabled={planLoading || !planInput.trim()} style={{ background: planInput.trim() ? c.bark : c.sand, border: "none", color: planInput.trim() ? c.cream : c.mid, fontFamily: "system-ui, sans-serif", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", padding: "0.75rem 1.25rem", cursor: planInput.trim() ? "pointer" : "not-allowed", flexShrink: 0 }}>
-                Send
-              </button>
-            </div>
-          </div>
-
-          {/* RIGHT — Itinerary */}
-          <div style={{ flex: 1, overflowY: "auto", background: c.cream }}>
-            {!itinerary ? (
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", padding: "3rem", textAlign: "center" }}>
-                <div style={{ width: 40, height: 1, background: c.gold, margin: "0 auto 2rem" }} />
-                <div style={{ fontSize: "1.5rem", color: c.ink, marginBottom: "0.75rem" }}>Your itinerary will appear here</div>
-                <div style={{ fontSize: "0.82rem", color: c.mid, fontFamily: "system-ui, sans-serif", fontWeight: 300, lineHeight: 1.8, maxWidth: 380 }}>Tell Deriva when you're going and how many nights — it'll build a full day-by-day plan using the best {result.name} has to offer. Ask it to change anything.</div>
-              </div>
-            ) : (
-              <div style={{ padding: "3rem" }}>
-                <div style={{ marginBottom: "2.5rem" }}>
-                  <div style={{ fontSize: "0.58rem", letterSpacing: "0.3em", textTransform: "uppercase", color: c.gold, fontFamily: "system-ui, sans-serif", marginBottom: "0.5rem" }}>Your Deriva itinerary</div>
-                  <div style={{ fontSize: "2rem", color: c.ink, marginBottom: "0.5rem" }}>{result.name}</div>
-                  {itinerary.bestFor && <div style={{ fontSize: "0.85rem", color: c.mid, fontFamily: "system-ui, sans-serif", fontWeight: 300, fontStyle: "italic" }}>{itinerary.bestFor}</div>}
-                  <div style={{ width: 30, height: 1, background: c.gold, marginTop: "1.5rem" }} />
-                </div>
-                {itinerary.days?.map((day, i) => (
-                  <div key={i} style={{ marginBottom: "2.5rem", paddingBottom: "2.5rem", borderBottom: i < itinerary.days.length - 1 ? `1px solid ${c.sand}` : "none" }}>
-                    <div style={{ display: "flex", alignItems: "baseline", gap: "1rem", marginBottom: "1.25rem" }}>
-                      <div style={{ fontSize: "0.6rem", letterSpacing: "0.2em", textTransform: "uppercase", color: c.gold, fontFamily: "system-ui, sans-serif", flexShrink: 0 }}>Day {day.day}</div>
-                      <div style={{ fontSize: "1.2rem", color: c.ink }}>{day.title}</div>
-                    </div>
-                    {[["Morning", day.morning], ["Afternoon", day.afternoon], ["Evening", day.evening], ["Stay", day.stay]].map(([label, text]) => text && (
-                      <div key={label} style={{ marginBottom: "1rem", display: "flex", gap: "1rem" }}>
-                        <div style={{ fontSize: "0.58rem", letterSpacing: "0.15em", textTransform: "uppercase", color: c.tan, fontFamily: "system-ui, sans-serif", paddingTop: "0.2rem", width: 64, flexShrink: 0 }}>{label}</div>
-                        <div style={{ fontSize: "0.85rem", color: c.charcoal, fontFamily: "system-ui, sans-serif", fontWeight: 300, lineHeight: 1.7 }}>{text}</div>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-                {itinerary.notes?.length > 0 && (
-                  <div style={{ background: c.bark, padding: "1.5rem 2rem" }}>
-                    <div style={{ fontSize: "0.58rem", letterSpacing: "0.2em", textTransform: "uppercase", color: c.gold, fontFamily: "system-ui, sans-serif", marginBottom: "1rem" }}>Good to know</div>
-                    {itinerary.notes.map((note, i) => (
-                      <div key={i} style={{ fontSize: "0.82rem", color: c.tan, fontFamily: "system-ui, sans-serif", fontWeight: 300, lineHeight: 1.7, marginBottom: "0.5rem" }}>— {note}</div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
